@@ -1,3 +1,7 @@
+/*
+This is the implementation of the paper "DHiX: Dynamic and Hybrid Real-time Window Aggregations with Constant Time Complexity".
+By Savong Bou, Toshiyuki Amagasa, Hiroyuki Kitagawa
+*/
 public class DHiX {
     public static void main(String[] args) {
         DHiXEngine engine = new DHiXEngine();
