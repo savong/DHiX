@@ -129,7 +129,8 @@ public class DHiXEngine {
     // You can call:
     // insert(ti, h, DHiX, H, intervalLevels, C, verySparseInterval);
     // int tail = query(ti, W, h, DHiX, H, intervalLevels, verySparseInterval);
-  void insert(long ti, int h, List<Record> DHiX, Map<Long, Integer> H,
+    
+    void insert(long ti, int h, List<Record> DHiX, Map<Long, Integer> H,
             List<Pair<Long, Map<Integer, List<Integer>>>> intervalLevels,
             long C, List<Integer> verySparseInterval) {
 
@@ -137,8 +138,18 @@ public class DHiXEngine {
         initializeUnitAndLevels(DHiX, intervalLevels);
     }
 
-    long tPrev = DHiX.get(h - 1).timestamp;
-    long gap = ti - tPrev;
+    long gap = 0;
+    long tPrev = 0;
+    if (DHiX.size() > 1)
+    {
+        tPrev = DHiX.get(h - 1).timestamp;
+        gap = ti - tPrev;
+    }
+    else
+    {
+        gap = C+1;
+    }
+    
 
     if (gap <= C) {
         for (long tm = tPrev + 1; tm <= ti; tm++) {
@@ -167,8 +178,8 @@ public class DHiXEngine {
 
     verySparseInterval.add(h);
 }
-
-  Integer query(long ti, long wt, int h, List<Record> DHiX, Map<Long, Integer> H,
+    
+    Integer query(long ti, long wt, int h, List<Record> DHiX, Map<Long, Integer> H,
               List<Pair<Long, Map<Integer, List<Integer>>>> intervalLevels,
               List<Integer> verySparseInterval) {
 
@@ -224,8 +235,9 @@ private Integer scanSingle(int i, long targetTime, List<Record> DHiX, int h) {
     return null;
 }
 
-  boolean unitInitialized = false;
-long C;
+
+//boolean unitInitialized = false;
+//long C;
 
 void initializeUnitAndLevels(List<Record> DHiX,
                              List<Pair<Long, Map<Integer, List<Integer>>>> intervalLevels) {
@@ -258,7 +270,6 @@ void initializeUnitAndLevels(List<Record> DHiX,
 
     unitInitialized = true;
 }
-
 
 
 }
