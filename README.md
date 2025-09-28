@@ -8,3 +8,6 @@ savong-hashimoto@cs.tsukuba.ac.jp
 
 # How to run the code in brief:
 
+java DHiX.java
+
+
