@@ -12,9 +12,15 @@ savong-hashimoto@cs.tsukuba.ac.jp
    - DHiX.java
 
 - DHiX Engine Class
--- DHiXEngine.java
-   
+   - DHiXEngine.java
 
+- Main Methods in DHiX Engine Class
+   - updateAggregationPath(int tail, int h) : Definition 4.6: Update Aggregation from  Head
+to Tail
+   - computeTail(int h, int w_c, int size) : Definition 4.4: Find Tail index for Count Window
+   - initializeUnitAndLevels(): Initialize time unit and levels
+   - insert(): Insert records into either the time interval or hashmap
+   - query(): Find Tail index for Time Window
 # How to run the code in brief:
 
 - java DHiX.java
