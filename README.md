@@ -6,8 +6,10 @@ This is the implementation of the paper "DHiX: Dynamic and Hybrid Real-time Wind
 # Contact
 savong-hashimoto@cs.tsukuba.ac.jp
 
+# Source code and programming structure:
+
 # How to run the code in brief:
 
-java DHiX.java
+- java DHiX.java
 
 
