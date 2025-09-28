@@ -8,6 +8,13 @@ savong-hashimoto@cs.tsukuba.ac.jp
 
 # Source code and programming structure:
 
+- Main Class
+-- DHiX.java
+
+- DHiX Engine Class
+-- DHiXEngine.java
+   
+
 # How to run the code in brief:
 
 - java DHiX.java
